@@ -1,0 +1,42 @@
+* {
+  font-family: "Roboto";
+}
+
+.game-title {
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+}
+
+.player-dash .subtext {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.game-board .player-dash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.computer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.computer .subtext {
+  text-align: center;
+  font-size: 30px;
+}
+.computer .computer-choice {
+  text-align: center;
+  font-size: 25px;
+}

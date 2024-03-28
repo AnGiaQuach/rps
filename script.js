@@ -12,21 +12,42 @@ const rule = {
   paper: "rock",
   scissors: "paper",
 };
+
 function computerRandomChoice() {
   let choice = Math.floor(Math.random() * numberOfChoice + 1);
-  return choice;
+  return choiceValue[choice];
 }
 
-let playerChoice = 1;
-const computer = computerRandomChoice();
-console.log(
-  `player choice : ${choiceValue[playerChoice]}\ncomputer choice : ${choiceValue[computer]}`
-);
+function checking(playerChoice, computer) {
+  const winner = document.querySelector(".winner");
+  winner.setAttribute("style", "color:black");
 
-if (rule[choiceValue[playerChoice]] == choiceValue[computer]) {
-  console.log("You win");
-} else if (choiceValue[playerChoice] == choiceValue[computer]) {
-  console.log("tie");
-} else {
-  console.log("u lose");
+  if (rule[playerChoice] == computer) {
+    winner.textContent = "You win";
+    winner.setAttribute("style", "color:red");
+    console.log("You win");
+  } else if (playerChoice == computer) {
+    winner.textContent = "No player win, tie";
+    winner.setAttribute("style", "color:green");
+    console.log("tie");
+  } else {
+    winner.textContent = "Computer win!";
+    winner.setAttribute("style", "color:blue");
+    console.log("u lose");
+  }
+}
+
+let playerChoice = "";
+
+let computerElement = document.querySelector(".computer-choice");
+
+const playerButton = document.querySelectorAll(".player");
+for (const button of playerButton) {
+  button.addEventListener("click", function () {
+    playerChoice = button.id;
+    const computer = computerRandomChoice();
+    computerElement.textContent = computer;
+
+    checking(playerChoice, computer);
+  });
 }

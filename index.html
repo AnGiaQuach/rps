@@ -4,11 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <div>
+    <div class="game-title">
       <h1>Super simple rock paper scissors</h1>
+    </div>
+
+    <div class="game-board">
+      <div class="player-dash">
+        <div class="subtext">You choose</div>
+
+        <div class="container">
+          <button class="player" id="rock">rock</button>
+          <button class="player" id="paper">paper</button>
+          <button class="player" id="scissors">scissors</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="computer">
+      <div class="subtext">Computer choose:</div>
+      <div class="computer-choice"></div>
+    </div>
+
+    <div class="score">
+      <h1 class="winner"></h1>
     </div>
   </body>
 </html>
